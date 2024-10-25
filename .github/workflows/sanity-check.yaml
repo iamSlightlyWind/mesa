@@ -7,6 +7,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
+    - name: set password
+      run: |
+        echo $(whoami)
+        echo "$(whoami):123" | sudo chpasswd
     
     - name: cloudflared ssh tunneling
       run: |
