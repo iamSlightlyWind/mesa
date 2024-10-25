@@ -19,6 +19,8 @@ jobs:
         sudo dpkg -i cloudflared.deb && 
         sudo cloudflared service install ${{ secrets.CLOUDFLARED_KEY }}
 
-    - name: Install Dependencies
+    - name: install dependencies
       run: |
+        sudo apt update
+        sudo apt install build-essential libdrm-dev libgbm-dev libxext-dev libxdamage-dev libxfixes-dev libx11-dev libxrandr-dev libgl1-mesa-dev libglu1-mesa-dev libvulkan-dev libegl1-mesa-dev libgles2-mesa-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-glx0-dev
         sleep 120m
